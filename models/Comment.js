@@ -4,6 +4,8 @@ var Event = require('./Event');
 
 mongoose.connect(config.mongodb);
 
+
+//This model contains Comments document in which it has username,title,date,comment attributes   
 var Schema = mongoose.Schema;
 
 var commentSchema = new Schema({

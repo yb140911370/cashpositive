@@ -35,17 +35,28 @@ app.use(session({
 }))
 
 
+ //REGISTER FUNCTION
+app.post('/user/new',users.register);
 
-app.post('/user/new',users.register); //REGISTER FUNCTION
-app.post('/user/login',users.login); //LOGIN FUNCTION
+//LOGIN FUNCTION
+app.post('/user/login',users.login); 
 
-app.get('/events/all', events.getAll); //GET ALL EVENtS
-app.get('/events/event/:title', events.fetch); //FETCH ONE EVENT WITH COMMENTS
-app.post('/events/create',events.create); //CREATE AN EVENT
-app.delete('/events/delete/:title',events.delete); //DELETE AN EVENt
-app.put('/events/update',events.update);//UPDATE AN EVENT
- 
-app.post('/events/comment',events.addComment); //ADD COMMENT TO AN EVENT
+//GET ALL EVENtS
+app.get('/events/all', events.getAll); 
+
+//FETCH ONE EVENT WITH COMMENTS
+app.get('/events/event/:title', events.fetch); 
+
+//CREATE AN EVENT
+app.post('/events/create',events.create);
+
+//DELETE AN EVENt 
+app.delete('/events/delete/:title',events.delete); 
+//UPDATE AN EVENT
+app.put('/events/update',events.update);
+
+//ADD COMMENT TO AN EVENT
+app.post('/events/comment',events.addComment); 
 
 app.use('/', index);
 
